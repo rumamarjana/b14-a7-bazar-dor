@@ -12,7 +12,7 @@ export default function UpdateProfilePage() {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
-  // session load হলে name সেট করো
+
   useEffect(() => {
     if (session?.user?.name) {
       setName(session.user.name);
@@ -23,8 +23,7 @@ export default function UpdateProfilePage() {
     e.preventDefault();
     setLoading(true);
 
-    // BetterAuth documentation অনুযায়ী updateUser ব্যবহার করো
-    // https://better-auth.com/docs/concepts/users-accounts#update-user
+  
     const { data, error } = await authClient.updateUser({
       name: name,
     });
