@@ -23,13 +23,13 @@ export default function CategoryPage() {
 
     Promise.all([
       fetch(
-        `https://api.api-store.workers.dev/api/bazardor/products?category=${slug}`
+        `https://openapi.programming-hero.com/api/bazardor/products?category=${slug}`
       ).then((res) => {
         if (!res.ok) throw new Error("Products fetch failed");
         return res.json();
       }),
       fetch(
-        `https://api.api-store.workers.dev/api/bazardor/categories/${slug}`
+        `https://openapi.programming-hero.com/api/bazardor/categories/${slug}`
       ).then((res) => {
         if (!res.ok) throw new Error("Category fetch failed");
         return res.json();
