@@ -1,7 +1,15 @@
+
+"use client";
+
+import { useEffect, useState } from "react";
 import { getBanglaDate } from "@/lib/utils";
 
 export default function Hero() {
-  const banglaDate = getBanglaDate();
+  const [banglaDate, setBanglaDate] = useState("");
+
+  useEffect(() => {
+    setBanglaDate(getBanglaDate());
+  }, []);
 
   return (
     <section className="bg-gradient-to-r from-green-50 to-green-100 py-10 md:py-16">
@@ -9,16 +17,19 @@ export default function Hero() {
         {/* Left Content */}
         <div className="flex-1">
           <span className="badge badge-success badge-outline mb-3">
-            {banglaDate}
+            {banglaDate || "আজকের তারিখ"}
           </span>
+
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4 leading-snug">
             আজকের বাজারের দাম এক নজরে
           </h2>
+
           <p className="text-gray-600 mb-6 max-w-lg">
             চাল, ডাল, তেল, সবজি, মাছ, মাংস, ডিম ও মসলার দাম —
             বাজারভিত্তিক বিস্তারিত, গড়, সর্বনিম্ন-সর্বোচ্চ এবং দামের
             পরিবর্তন এক জায়গায়।
           </p>
+
           <a
             href="#সব-পণ্য"
             className="btn btn-success text-white btn-md"
@@ -35,3 +46,4 @@ export default function Hero() {
     </section>
   );
 }
+```
