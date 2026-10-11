@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 async function getProduct(slug: string): Promise<Product | null> {
-  // slug দিয়ে সরাসরি API নেই, তাই সব প্রোডাক্ট ফেচ করে slug match করবো
+ 
   const res = await fetch(
     "https://openapi.programming-hero.com/api/bazardor/products",
     { next: { revalidate: 60 } }
