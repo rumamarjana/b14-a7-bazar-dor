@@ -12,11 +12,11 @@ const db = client.db("bazar-dor");
 export const auth = betterAuth({
   baseURL:
     process.env.BETTER_AUTH_URL ||
-    "https://b14-a7-bazar-dor-two.vercel.app",
+    "https://b14-a7-bazar-dor-theta.vercel.app",
 
   trustedOrigins: [
     "http://localhost:3000",
-    "https://b14-a7-bazar-dor-two.vercel.app",
+    "https://b14-a7-bazar-dor-theta.vercel.app",
   ],
 
   emailAndPassword: {
